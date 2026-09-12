@@ -7,11 +7,12 @@ export class ProductView extends View {
     #buttons;
     // Templates and callbacks
     #productTemplate;
+    #templateReady;
     #onBuyProduct;
 
     constructor() {
         super();
-        this.init();
+        this.#templateReady = this.init();
     }
 
     async init() {
@@ -27,8 +28,8 @@ export class ProductView extends View {
         this.#onBuyProduct = callback;
     }
 
-    render(products, disableButtons = true) {
-        if (!this.#productTemplate) return;
+    async render(products, disableButtons = true) {
+        await this.#templateReady;
         const html = products.map(product => {
             return this.replaceTemplate(this.#productTemplate, {
                 id: product.id,

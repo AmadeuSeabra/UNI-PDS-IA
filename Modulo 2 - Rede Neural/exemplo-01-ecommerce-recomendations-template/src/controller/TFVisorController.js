@@ -25,6 +25,10 @@ export class TFVisorController {
             this.#tfVisorView.resetDashboard();
         });
 
+        this.#events.onTFVisorData((data) => {
+            this.#tfVisorView.renderData(data);
+        });
+
         this.#events.onTFVisLogs(
             (log) => {
                 this.#tfVisorView.handleTrainingLog(log);
