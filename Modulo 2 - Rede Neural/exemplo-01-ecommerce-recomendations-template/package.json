@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "browser-sync -w . --server --files 'index.html, data/*.json, js/*.js' --port 3000",
+        "start": "browser-sync -w . --server --files index.html,data/*.json,src/**/*.js,style.css --port 3000",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
