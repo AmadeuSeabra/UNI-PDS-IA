@@ -29,7 +29,6 @@ export default async function main(game) {
         const canvas = game.app.renderer.extract.canvas(game.stage);
         const bitmap = await createImageBitmap(canvas);
 
-        //Enviando para o worker a imagem do canvas para que ele faça a predição
         worker.postMessage({
             type: 'predict',
             image: bitmap,
