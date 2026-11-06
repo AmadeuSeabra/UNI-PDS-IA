@@ -1,0 +1,6 @@
+.env
+**/.env
+node_modules/
+**/node_modules/
+**/neo4j/
+Modulo 2 - Rede Neural/exemplo-13-embeddings-neo4j-rag/respostas/*.md
